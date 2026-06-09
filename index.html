@@ -477,7 +477,9 @@
     .planos-header .section-h2 { margin-bottom: 1rem; }
     .planos-header > p { color: var(--text-soft); font-size: 1.05rem; line-height: 1.7; max-width: 520px; margin: 0 auto; }
 
-    .planos-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .planos-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; }
+    @media (max-width: 1100px) { .planos-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 750px)  { .planos-grid { grid-template-columns: repeat(2, 1fr); } }
 
     .plano-card.gratis { border-color: rgba(91,45,142,0.2); background: linear-gradient(160deg, rgba(255,255,255,0.9), rgba(237,231,246,0.6)); }
     .plano-card.gratis:hover { background: rgba(255,255,255,0.95); }
@@ -487,9 +489,6 @@
     .brinde-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: var(--text-soft); line-height: 1.45; }
     .brinde-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
     .brinde-item strong { color: var(--text); font-weight: 700; display: block; font-size: 0.84rem; }
-
-    @media (max-width: 900px) { .planos-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 700px) { .planos-grid { grid-template-columns: 1fr; } }
 
     .plano-card {
       background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px;
@@ -507,6 +506,9 @@
       padding: 0.25rem 0.75rem; border-radius: 50px; margin-bottom: 1.5rem; align-self: flex-start;
     }
     .plano-badge.popular { background: linear-gradient(90deg, #5B2D8E, #7B3FC4); }
+    .plano-badge.mensal-badge { background: linear-gradient(90deg, #3D1B6E, #5B2D8E); }
+    .plano-card.mensal { border-color: rgba(61,27,110,0.3); background: linear-gradient(160deg, rgba(61,27,110,0.08) 0%, rgba(91,45,142,0.05) 100%); }
+    .plano-card.mensal:hover { background: rgba(61,27,110,0.12); }
     .plano-nome { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 0.4rem; }
     .plano-desc { font-size: 0.88rem; color: var(--text-soft); line-height: 1.6; margin-bottom: 1.75rem; }
     .plano-preco { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: 0.25rem; }
@@ -526,8 +528,6 @@
     .plano-cta.outline:hover { border-color: #5B2D8E; background: rgba(91,45,142,0.06); }
     .plano-cta.filled { background: #5B2D8E; color: white; border: none; box-shadow: 0 4px 20px rgba(91,45,142,0.3); }
     .plano-cta.filled:hover { background: #3D1580; box-shadow: 0 6px 28px rgba(91,45,142,0.45); }
-
-    @media (max-width: 700px) { .planos-grid { grid-template-columns: 1fr; } }
 
     /* ── SAIBA MAIS ── */
     .plano-detalhe { margin-top: 1rem; margin-bottom: 0.5rem; }
@@ -1042,37 +1042,52 @@
       <div class="proj-card reveal">
         <div class="proj-thumb">
           <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-            <!-- fundo -->
-            <rect width="400" height="225" fill="#1a0533"/>
-            <!-- laptop base -->
-            <rect x="60" y="20" width="280" height="168" rx="8" fill="#111" stroke="#333" stroke-width="2"/>
-            <rect x="68" y="28" width="264" height="152" rx="4" fill="#0d0118"/>
-            <!-- tela: nav -->
-            <rect x="68" y="28" width="264" height="20" rx="4" fill="#180830"/>
-            <rect x="76" y="34" width="28" height="8" rx="4" fill="#7B3FC4"/>
-            <rect x="220" y="35" width="20" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
-            <rect x="246" y="35" width="20" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
-            <rect x="272" y="34" width="32" height="8" rx="4" fill="#5B2D8E"/>
-            <!-- tela: hero -->
-            <rect x="76" y="58" width="112" height="14" rx="7" fill="rgba(255,255,255,0.85)"/>
-            <rect x="76" y="78" width="80" height="8" rx="4" fill="rgba(255,255,255,0.45)"/>
-            <rect x="76" y="92" width="96" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
-            <rect x="76" y="110" width="60" height="16" rx="8" fill="#5B2D8E"/>
-            <rect x="142" y="110" width="46" height="16" rx="8" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-            <!-- tela: foto perfil -->
-            <rect x="210" y="50" width="108" height="118" rx="8" fill="#220a44"/>
-            <circle cx="264" cy="96" r="28" fill="#2e1060"/>
-            <circle cx="264" cy="88" r="14" fill="#3D1580"/>
-            <ellipse cx="264" cy="112" rx="18" ry="9" fill="#3D1580"/>
-            <!-- tela: chips -->
-            <rect x="76" y="136" width="36" height="10" rx="5" fill="rgba(91,45,142,0.5)"/>
-            <rect x="118" y="136" width="44" height="10" rx="5" fill="rgba(91,45,142,0.3)"/>
-            <rect x="168" y="136" width="36" height="10" rx="5" fill="rgba(91,45,142,0.3)"/>
-            <!-- laptop corpo -->
-            <rect x="40" y="188" width="320" height="12" rx="4" fill="#222" stroke="#333" stroke-width="1"/>
-            <rect x="160" y="185" width="80" height="4" rx="2" fill="#1a1a1a"/>
-            <!-- reflexo tela -->
-            <rect x="68" y="28" width="60" height="152" rx="4" fill="rgba(255,255,255,0.015)"/>
+            <defs>
+              <linearGradient id="mac1bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2d1060"/><stop offset="100%" stop-color="#0d0118"/></linearGradient>
+              <linearGradient id="mac1body" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d4d4d4"/><stop offset="100%" stop-color="#a8a8a8"/></linearGradient>
+              <linearGradient id="mac1base" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#c8c8c8"/><stop offset="100%" stop-color="#b0b0b0"/></linearGradient>
+              <filter id="s1"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.5)"/></filter>
+            </defs>
+            <rect width="400" height="225" fill="url(#mac1bg)"/>
+            <!-- sombra laptop -->
+            <ellipse cx="200" cy="205" rx="130" ry="10" fill="rgba(0,0,0,0.4)"/>
+            <!-- corpo laptop -->
+            <rect x="58" y="18" width="284" height="172" rx="10" fill="url(#mac1body)" filter="url(#s1)"/>
+            <!-- moldura tela -->
+            <rect x="64" y="24" width="272" height="160" rx="6" fill="#1a1a1a"/>
+            <!-- tela -->
+            <rect x="67" y="27" width="266" height="154" rx="4" fill="#0d0118"/>
+            <!-- nav -->
+            <rect x="67" y="27" width="266" height="22" rx="4" fill="#180830"/>
+            <rect x="75" y="33" width="30" height="9" rx="4.5" fill="#7B3FC4"/>
+            <rect x="222" y="34" width="22" height="7" rx="3.5" fill="rgba(255,255,255,0.15)"/>
+            <rect x="250" y="34" width="22" height="7" rx="3.5" fill="rgba(255,255,255,0.15)"/>
+            <rect x="278" y="33" width="46" height="9" rx="4.5" fill="#5B2D8E"/>
+            <!-- hero -->
+            <rect x="75" y="60" width="120" height="15" rx="7.5" fill="rgba(255,255,255,0.88)"/>
+            <rect x="75" y="81" width="86" height="9" rx="4.5" fill="rgba(255,255,255,0.45)"/>
+            <rect x="75" y="96" width="100" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+            <rect x="75" y="114" width="64" height="18" rx="9" fill="#5B2D8E"/>
+            <rect x="145" y="114" width="50" height="18" rx="9" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="1.5"/>
+            <!-- foto perfil mockup -->
+            <rect x="212" y="48" width="108" height="122" rx="10" fill="#220a44"/>
+            <circle cx="266" cy="96" r="30" fill="#2e1060"/>
+            <circle cx="266" cy="87" r="15" fill="#3D1580"/>
+            <ellipse cx="266" cy="113" rx="20" ry="10" fill="#3D1580"/>
+            <rect x="224" y="151" width="84" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
+            <!-- chips -->
+            <rect x="75" y="143" width="40" height="11" rx="5.5" fill="rgba(91,45,142,0.5)"/>
+            <rect x="121" y="143" width="48" height="11" rx="5.5" fill="rgba(91,45,142,0.3)"/>
+            <rect x="175" y="143" width="40" height="11" rx="5.5" fill="rgba(91,45,142,0.3)"/>
+            <!-- reflexo diagonal -->
+            <polygon points="67,27 120,27 90,181 67,181" fill="rgba(255,255,255,0.018)"/>
+            <!-- câmera -->
+            <circle cx="200" cy="25" r="2.5" fill="#111" stroke="#333" stroke-width=".5"/>
+            <!-- base laptop -->
+            <rect x="38" y="190" width="324" height="14" rx="3" fill="url(#mac1base)"/>
+            <rect x="155" y="187" width="90" height="5" rx="2.5" fill="#bbb"/>
+            <!-- detalhe maçã -->
+            <circle cx="200" cy="105" r="3" fill="rgba(255,255,255,0.04)"/>
           </svg>
         </div>
         <div class="proj-body">
@@ -1087,34 +1102,46 @@
       <div class="proj-card reveal">
         <div class="proj-thumb">
           <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-            <rect width="400" height="225" fill="#f5efe6"/>
-            <!-- laptop -->
-            <rect x="55" y="18" width="290" height="172" rx="8" fill="#e0d5c5" stroke="#c8b89a" stroke-width="1.5"/>
-            <rect x="63" y="26" width="274" height="156" rx="4" fill="#fdf9f4"/>
+            <defs>
+              <linearGradient id="mac2bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff8f0"/><stop offset="100%" stop-color="#f0e6d8"/></linearGradient>
+              <linearGradient id="mac2body" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d8d0c8"/><stop offset="100%" stop-color="#b8b0a8"/></linearGradient>
+              <filter id="s2"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.25)"/></filter>
+            </defs>
+            <rect width="400" height="225" fill="url(#mac2bg)"/>
+            <ellipse cx="200" cy="205" rx="130" ry="9" fill="rgba(0,0,0,0.18)"/>
+            <rect x="58" y="18" width="284" height="172" rx="10" fill="url(#mac2body)" filter="url(#s2)"/>
+            <rect x="64" y="24" width="272" height="160" rx="6" fill="#1a1a1a"/>
+            <rect x="67" y="27" width="266" height="154" rx="4" fill="#fdf9f4"/>
             <!-- nav -->
-            <rect x="63" y="26" width="274" height="22" rx="4" fill="#fff"/>
-            <rect x="71" y="32" width="36" height="10" rx="5" fill="#c97b3b"/>
-            <rect x="240" y="33" width="22" height="7" rx="3.5" fill="rgba(74,55,40,0.2)"/>
-            <rect x="268" y="33" width="22" height="7" rx="3.5" fill="rgba(74,55,40,0.2)"/>
-            <rect x="296" y="32" width="32" height="10" rx="5" fill="#c97b3b"/>
-            <!-- hero bio -->
-            <rect x="71" y="58" width="90" height="12" rx="6" fill="#2c1810" opacity=".8"/>
-            <rect x="71" y="76" width="68" height="8" rx="4" fill="#c97b3b" opacity=".7"/>
-            <rect x="71" y="90" width="110" height="6" rx="3" fill="rgba(74,55,40,0.2)"/>
-            <rect x="71" y="102" width="90" height="6" rx="3" fill="rgba(74,55,40,0.15)"/>
-            <!-- grid projetos -->
-            <rect x="71" y="118" width="82" height="56" rx="6" fill="#e8cfb0"/>
-            <rect x="71" y="118" width="82" height="34" rx="6" fill="#c97b3b" opacity=".55"/>
-            <rect x="75" y="157" width="44" height="5" rx="2.5" fill="#4a3728" opacity=".5"/>
-            <rect x="159" y="118" width="82" height="56" rx="6" fill="#e8cfb0"/>
-            <rect x="159" y="118" width="82" height="34" rx="6" fill="#a0622c" opacity=".4"/>
-            <rect x="163" y="157" width="44" height="5" rx="2.5" fill="#4a3728" opacity=".5"/>
-            <rect x="247" y="118" width="82" height="56" rx="6" fill="#e8cfb0"/>
-            <rect x="247" y="118" width="82" height="34" rx="6" fill="#c97b3b" opacity=".35"/>
-            <rect x="251" y="157" width="44" height="5" rx="2.5" fill="#4a3728" opacity=".5"/>
-            <!-- laptop base -->
-            <rect x="35" y="190" width="330" height="12" rx="4" fill="#d0c5b5" stroke="#c8b89a" stroke-width="1"/>
-            <rect x="165" y="188" width="70" height="4" rx="2" fill="#c0b5a5"/>
+            <rect x="67" y="27" width="266" height="22" rx="4" fill="#fff"/>
+            <rect x="75" y="33" width="38" height="10" rx="5" fill="#c97b3b"/>
+            <rect x="240" y="34" width="22" height="7" rx="3.5" fill="rgba(74,55,40,0.18)"/>
+            <rect x="268" y="34" width="22" height="7" rx="3.5" fill="rgba(74,55,40,0.18)"/>
+            <rect x="296" y="33" width="28" height="10" rx="5" fill="#c97b3b"/>
+            <!-- bio -->
+            <rect x="75" y="60" width="95" height="13" rx="6.5" fill="#2c1810" opacity=".78"/>
+            <rect x="75" y="79" width="72" height="8" rx="4" fill="#c97b3b" opacity=".7"/>
+            <rect x="75" y="93" width="112" height="6" rx="3" fill="rgba(74,55,40,0.2)"/>
+            <rect x="75" y="105" width="88" height="6" rx="3" fill="rgba(74,55,40,0.14)"/>
+            <!-- grid -->
+            <rect x="75" y="122" width="80" height="52" rx="7" fill="#e8cfb0"/>
+            <rect x="75" y="122" width="80" height="32" rx="7" fill="#c97b3b" opacity=".5"/>
+            <rect x="79" y="158" width="46" height="5" rx="2.5" fill="#4a3728" opacity=".45"/>
+            <rect x="79" y="166" width="32" height="4" rx="2" fill="#4a3728" opacity=".22"/>
+            <rect x="163" y="122" width="80" height="52" rx="7" fill="#e8cfb0"/>
+            <rect x="163" y="122" width="80" height="32" rx="7" fill="#a0622c" opacity=".38"/>
+            <rect x="167" y="158" width="46" height="5" rx="2.5" fill="#4a3728" opacity=".45"/>
+            <rect x="167" y="166" width="32" height="4" rx="2" fill="#4a3728" opacity=".22"/>
+            <rect x="251" y="122" width="78" height="52" rx="7" fill="#e8cfb0"/>
+            <rect x="251" y="122" width="78" height="32" rx="7" fill="#c97b3b" opacity=".32"/>
+            <rect x="255" y="158" width="46" height="5" rx="2.5" fill="#4a3728" opacity=".45"/>
+            <rect x="255" y="166" width="32" height="4" rx="2" fill="#4a3728" opacity=".22"/>
+            <!-- reflexo -->
+            <polygon points="67,27 112,27 85,181 67,181" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="200" cy="25" r="2.5" fill="#111" stroke="#333" stroke-width=".5"/>
+            <!-- base -->
+            <rect x="38" y="190" width="324" height="14" rx="3" fill="#c8c0b8"/>
+            <rect x="155" y="187" width="90" height="5" rx="2.5" fill="#b8b0a8"/>
           </svg>
         </div>
         <div class="proj-body">
@@ -1130,44 +1157,45 @@
         <div class="proj-thumb">
           <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
             <defs>
-              <linearGradient id="lp3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0c4a6e"/>
-                <stop offset="100%" stop-color="#0369a1"/>
-              </linearGradient>
+              <linearGradient id="lp3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0c4a6e"/><stop offset="100%" stop-color="#0369a1"/></linearGradient>
+              <linearGradient id="mac3body" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d4d4d4"/><stop offset="100%" stop-color="#a8a8a8"/></linearGradient>
+              <filter id="s3"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,0,0,0.4)"/></filter>
             </defs>
-            <rect width="400" height="225" fill="#e8f4fd"/>
-            <!-- laptop -->
-            <rect x="55" y="15" width="290" height="175" rx="8" fill="#222" stroke="#333" stroke-width="1.5"/>
-            <rect x="63" y="23" width="274" height="159" rx="4" fill="url(#lp3)"/>
-            <!-- nav transparente -->
-            <rect x="63" y="23" width="274" height="22" rx="4" fill="rgba(0,0,0,0.2)"/>
-            <rect x="71" y="29" width="36" height="10" rx="5" fill="rgba(255,255,255,0.85)"/>
-            <rect x="238" y="30" width="20" height="7" rx="3.5" fill="rgba(255,255,255,0.3)"/>
-            <rect x="264" y="30" width="20" height="7" rx="3.5" fill="rgba(255,255,255,0.3)"/>
-            <rect x="292" y="29" width="36" height="10" rx="5" fill="#38bdf8"/>
-            <!-- hero texto -->
-            <rect x="71" y="56" width="130" height="14" rx="7" fill="rgba(255,255,255,0.92)"/>
-            <rect x="71" y="76" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.6)"/>
-            <rect x="71" y="91" width="115" height="7" rx="3.5" fill="rgba(255,255,255,0.35)"/>
-            <rect x="71" y="107" width="68" height="18" rx="9" fill="#38bdf8"/>
-            <rect x="145" y="107" width="56" height="18" rx="9" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
-            <!-- foto direita simulada -->
-            <rect x="224" y="48" width="104" height="116" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-            <rect x="232" y="56" width="88" height="52" rx="6" fill="rgba(255,255,255,0.08)"/>
-            <circle cx="276" cy="82" r="20" fill="rgba(255,255,255,0.12)"/>
-            <rect x="240" y="116" width="72" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
-            <rect x="248" y="128" width="56" height="5" rx="2.5" fill="rgba(255,255,255,0.12)"/>
-            <!-- stats bottom -->
-            <rect x="63" y="160" width="274" height="22" rx="0" fill="rgba(0,0,0,0.2)"/>
-            <rect x="75" y="166" width="18" height="10" rx="5" fill="rgba(255,255,255,0.7)"/>
-            <rect x="98" y="168" width="44" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
-            <rect x="178" y="166" width="18" height="10" rx="5" fill="rgba(255,255,255,0.7)"/>
-            <rect x="201" y="168" width="44" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
-            <rect x="281" y="166" width="18" height="10" rx="5" fill="rgba(255,255,255,0.7)"/>
-            <rect x="304" y="168" width="26" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
-            <!-- base laptop -->
-            <rect x="35" y="190" width="330" height="12" rx="4" fill="#2a2a2a" stroke="#333" stroke-width="1"/>
-            <rect x="165" y="188" width="70" height="4" rx="2" fill="#1a1a1a"/>
+            <rect width="400" height="225" fill="#dbeeff"/>
+            <ellipse cx="200" cy="205" rx="130" ry="9" fill="rgba(0,0,0,0.22)"/>
+            <rect x="58" y="18" width="284" height="172" rx="10" fill="url(#mac3body)" filter="url(#s3)"/>
+            <rect x="64" y="24" width="272" height="160" rx="6" fill="#1a1a1a"/>
+            <rect x="67" y="27" width="266" height="154" rx="4" fill="url(#lp3)"/>
+            <!-- nav -->
+            <rect x="67" y="27" width="266" height="22" rx="4" fill="rgba(0,0,0,0.22)"/>
+            <rect x="75" y="33" width="38" height="9" rx="4.5" fill="rgba(255,255,255,0.88)"/>
+            <rect x="238" y="34" width="22" height="7" rx="3.5" fill="rgba(255,255,255,0.3)"/>
+            <rect x="266" y="34" width="22" height="7" rx="3.5" fill="rgba(255,255,255,0.3)"/>
+            <rect x="295" y="33" width="30" height="9" rx="4.5" fill="#38bdf8"/>
+            <!-- hero -->
+            <rect x="75" y="62" width="128" height="14" rx="7" fill="rgba(255,255,255,0.92)"/>
+            <rect x="75" y="82" width="98" height="9" rx="4.5" fill="rgba(255,255,255,0.58)"/>
+            <rect x="75" y="97" width="114" height="7" rx="3.5" fill="rgba(255,255,255,0.33)"/>
+            <rect x="75" y="114" width="66" height="18" rx="9" fill="#38bdf8"/>
+            <rect x="148" y="114" width="54" height="18" rx="9" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="1.5"/>
+            <!-- imagem direita -->
+            <rect x="222" y="50" width="106" height="116" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+            <rect x="230" y="58" width="90" height="54" rx="6" fill="rgba(255,255,255,0.07)"/>
+            <circle cx="275" cy="85" r="22" fill="rgba(255,255,255,0.1)"/>
+            <rect x="238" y="120" width="74" height="6" rx="3" fill="rgba(255,255,255,0.18)"/>
+            <rect x="246" y="132" width="58" height="5" rx="2.5" fill="rgba(255,255,255,0.1)"/>
+            <!-- barra stats -->
+            <rect x="67" y="160" width="266" height="21" rx="0" fill="rgba(0,0,0,0.22)"/>
+            <rect x="78" y="166" width="16" height="9" rx="4.5" fill="rgba(255,255,255,0.7)"/>
+            <rect x="99" y="168" width="42" height="5" rx="2.5" fill="rgba(255,255,255,0.28)"/>
+            <rect x="180" y="166" width="16" height="9" rx="4.5" fill="rgba(255,255,255,0.7)"/>
+            <rect x="201" y="168" width="42" height="5" rx="2.5" fill="rgba(255,255,255,0.28)"/>
+            <rect x="284" y="166" width="16" height="9" rx="4.5" fill="rgba(255,255,255,0.7)"/>
+            <rect x="305" y="168" width="24" height="5" rx="2.5" fill="rgba(255,255,255,0.28)"/>
+            <polygon points="67,27 112,27 86,181 67,181" fill="rgba(255,255,255,0.022)"/>
+            <circle cx="200" cy="25" r="2.5" fill="#111" stroke="#333" stroke-width=".5"/>
+            <rect x="38" y="190" width="324" height="14" rx="3" fill="#c8c8c8"/>
+            <rect x="155" y="187" width="90" height="5" rx="2.5" fill="#bbb"/>
           </svg>
         </div>
         <div class="proj-body">
@@ -1182,50 +1210,65 @@
       <div class="proj-card reveal">
         <div class="proj-thumb">
           <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-            <rect width="400" height="225" fill="#111"/>
-            <!-- laptop dark -->
-            <rect x="50" y="14" width="300" height="178" rx="8" fill="#1a1a1d" stroke="#2a2a2e" stroke-width="1.5"/>
-            <rect x="58" y="22" width="284" height="162" rx="4" fill="#09090b"/>
+            <defs>
+              <linearGradient id="mac4body" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#2a2a2e"/><stop offset="100%" stop-color="#1a1a1e"/></linearGradient>
+              <filter id="s4"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="rgba(0,0,0,0.7)"/></filter>
+            </defs>
+            <rect width="400" height="225" fill="#0a0a0f"/>
+            <ellipse cx="200" cy="207" rx="132" ry="9" fill="rgba(0,0,0,0.6)"/>
+            <rect x="58" y="18" width="284" height="172" rx="10" fill="url(#mac4body)" filter="url(#s4)"/>
+            <rect x="64" y="24" width="272" height="160" rx="6" fill="#111"/>
+            <rect x="67" y="27" width="266" height="154" rx="4" fill="#09090b"/>
             <!-- sidebar -->
-            <rect x="58" y="22" width="52" height="162" rx="4" fill="#111113"/>
-            <circle cx="84" cy="40" r="10" fill="#5B2D8E" opacity=".9"/>
-            <rect x="68" y="60" width="32" height="6" rx="3" fill="#5B2D8E" opacity=".5"/>
-            <rect x="68" y="73" width="32" height="6" rx="3" fill="#3f3f46"/>
-            <rect x="68" y="86" width="32" height="6" rx="3" fill="#3f3f46"/>
-            <rect x="68" y="99" width="32" height="6" rx="3" fill="#3f3f46"/>
+            <rect x="67" y="27" width="50" height="154" rx="4" fill="#111113"/>
+            <circle cx="92" cy="44" r="10" fill="#5B2D8E" opacity=".9"/>
+            <rect x="76" y="64" width="32" height="6" rx="3" fill="#5B2D8E" opacity=".5"/>
+            <rect x="76" y="77" width="32" height="6" rx="3" fill="#3f3f46"/>
+            <rect x="76" y="90" width="32" height="6" rx="3" fill="#3f3f46"/>
+            <rect x="76" y="103" width="32" height="6" rx="3" fill="#3f3f46"/>
+            <rect x="76" y="116" width="32" height="6" rx="3" fill="#3f3f46"/>
             <!-- topbar -->
-            <rect x="110" y="22" width="232" height="20" rx="0" fill="#18181b"/>
-            <rect x="118" y="28" width="55" height="7" rx="3.5" fill="#27272a"/>
-            <rect x="298" y="26" width="18" height="10" rx="5" fill="#5B2D8E" opacity=".7"/>
-            <circle cx="328" cy="31" r="7" fill="#3f3f46"/>
+            <rect x="117" y="27" width="216" height="20" rx="0" fill="#18181b"/>
+            <rect x="125" y="32" width="52" height="7" rx="3.5" fill="#27272a"/>
+            <rect x="299" y="31" width="16" height="9" rx="4.5" fill="#5B2D8E" opacity=".7"/>
+            <circle cx="326" cy="36" r="6" fill="#3f3f46"/>
             <!-- KPIs -->
-            <rect x="110" y="48" width="54" height="36" rx="6" fill="#1c1c1f"/>
-            <rect x="116" y="54" width="22" height="5" rx="2.5" fill="#5B2D8E" opacity=".6"/>
-            <rect x="116" y="63" width="36" height="10" rx="5" fill="rgba(255,255,255,0.75)"/>
-            <rect x="170" y="48" width="54" height="36" rx="6" fill="#1c1c1f"/>
-            <rect x="176" y="54" width="22" height="5" rx="2.5" fill="#5B2D8E" opacity=".6"/>
-            <rect x="176" y="63" width="36" height="10" rx="5" fill="rgba(255,255,255,0.75)"/>
-            <rect x="230" y="48" width="54" height="36" rx="6" fill="#1c1c1f"/>
-            <rect x="236" y="54" width="22" height="5" rx="2.5" fill="#5B2D8E" opacity=".6"/>
-            <rect x="236" y="63" width="36" height="10" rx="5" fill="rgba(255,255,255,0.75)"/>
-            <rect x="290" y="48" width="52" height="36" rx="6" fill="#1c1c1f"/>
-            <rect x="296" y="54" width="22" height="5" rx="2.5" fill="#5B2D8E" opacity=".6"/>
-            <rect x="296" y="63" width="36" height="10" rx="5" fill="rgba(255,255,255,0.75)"/>
+            <rect x="117" y="53" width="48" height="34" rx="6" fill="#1c1c1f"/>
+            <rect x="123" y="59" width="20" height="5" rx="2.5" fill="#5B2D8E" opacity=".55"/>
+            <rect x="123" y="68" width="34" height="10" rx="5" fill="rgba(255,255,255,0.78)"/>
+            <rect x="123" y="81" width="20" height="4" rx="2" fill="#28c840" opacity=".7"/>
+            <rect x="171" y="53" width="48" height="34" rx="6" fill="#1c1c1f"/>
+            <rect x="177" y="59" width="20" height="5" rx="2.5" fill="#5B2D8E" opacity=".55"/>
+            <rect x="177" y="68" width="34" height="10" rx="5" fill="rgba(255,255,255,0.78)"/>
+            <rect x="177" y="81" width="20" height="4" rx="2" fill="#38bdf8" opacity=".7"/>
+            <rect x="225" y="53" width="48" height="34" rx="6" fill="#1c1c1f"/>
+            <rect x="231" y="59" width="20" height="5" rx="2.5" fill="#5B2D8E" opacity=".55"/>
+            <rect x="231" y="68" width="34" height="10" rx="5" fill="rgba(255,255,255,0.78)"/>
+            <rect x="231" y="81" width="20" height="4" rx="2" fill="#f59e0b" opacity=".7"/>
+            <rect x="279" y="53" width="50" height="34" rx="6" fill="#1c1c1f"/>
+            <rect x="285" y="59" width="20" height="5" rx="2.5" fill="#5B2D8E" opacity=".55"/>
+            <rect x="285" y="68" width="34" height="10" rx="5" fill="rgba(255,255,255,0.78)"/>
+            <rect x="285" y="81" width="20" height="4" rx="2" fill="#ef4444" opacity=".7"/>
             <!-- gráfico linha -->
-            <rect x="110" y="90" width="154" height="78" rx="6" fill="#1c1c1f"/>
-            <rect x="118" y="97" width="44" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
-            <polyline points="118,152 134,140 150,145 166,126 182,133 198,114 214,120 256,104" fill="none" stroke="#7B3FC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="118,152 134,140 150,145 166,126 182,133 198,114 214,120 256,104 256,158 118,158" fill="#5B2D8E" opacity=".1"/>
+            <rect x="117" y="93" width="150" height="76" rx="6" fill="#1c1c1f"/>
+            <rect x="125" y="100" width="40" height="6" rx="3" fill="rgba(255,255,255,0.38)"/>
+            <line x1="125" y1="155" x2="259" y2="155" stroke="#3f3f46" stroke-width="1"/>
+            <line x1="125" y1="138" x2="259" y2="138" stroke="#3f3f46" stroke-width=".5" stroke-dasharray="3,3"/>
+            <line x1="125" y1="120" x2="259" y2="120" stroke="#3f3f46" stroke-width=".5" stroke-dasharray="3,3"/>
+            <polyline points="125,152 142,140 160,146 178,125 196,132 214,112 232,118 252,103" fill="none" stroke="#7B3FC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="125,152 142,140 160,146 178,125 196,132 214,112 232,118 252,103 252,155 125,155" fill="#5B2D8E" opacity=".12"/>
             <!-- gráfico barras -->
-            <rect x="270" y="90" width="72" height="78" rx="6" fill="#1c1c1f"/>
-            <rect x="278" y="97" width="38" height="6" rx="3" fill="rgba(255,255,255,0.4)"/>
-            <rect x="279" y="132" width="12" height="28" rx="3" fill="#5B2D8E" opacity=".8"/>
-            <rect x="295" y="122" width="12" height="38" rx="3" fill="#7B3FC4" opacity=".7"/>
-            <rect x="311" y="138" width="12" height="22" rx="3" fill="#5B2D8E" opacity=".5"/>
-            <rect x="327" y="115" width="8" height="45" rx="3" fill="#7B3FC4" opacity=".8"/>
-            <!-- base -->
-            <rect x="30" y="192" width="340" height="12" rx="4" fill="#1a1a1d" stroke="#2a2a2e" stroke-width="1"/>
-            <rect x="170" y="190" width="60" height="4" rx="2" fill="#111"/>
+            <rect x="273" y="93" width="60" height="76" rx="6" fill="#1c1c1f"/>
+            <rect x="280" y="100" width="34" height="6" rx="3" fill="rgba(255,255,255,0.38)"/>
+            <rect x="282" y="133" width="10" height="28" rx="3" fill="#5B2D8E" opacity=".82"/>
+            <rect x="296" y="123" width="10" height="38" rx="3" fill="#7B3FC4" opacity=".72"/>
+            <rect x="310" y="140" width="10" height="21" rx="3" fill="#5B2D8E" opacity=".5"/>
+            <!-- tabela -->
+            <rect x="117" y="175" width="216" height="6" rx="3" fill="#1c1c1f"/>
+            <polygon points="67,27 100,27 78,181 67,181" fill="rgba(255,255,255,0.015)"/>
+            <circle cx="200" cy="25" r="2.5" fill="#222" stroke="#333" stroke-width=".5"/>
+            <rect x="38" y="190" width="324" height="14" rx="3" fill="#1e1e22"/>
+            <rect x="155" y="187" width="90" height="5" rx="2.5" fill="#111"/>
           </svg>
         </div>
         <div class="proj-body">
@@ -1396,6 +1439,15 @@
               Tudo que um portfólio precisa ter: estrutura, conteúdo e SEO básico
             </div>
           </div>
+          <div class="brinde-item">
+            <span class="brinde-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B2D8E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+            </span>
+            <div>
+              <strong>Guia de Estilos SOC</strong>
+              Sugestões prontas de layout, paleta de cores e tipografia nos estilos moderno, minimalista e personalizado
+            </div>
+          </div>
         </div>
         <details class="plano-detalhe">
           <summary>
@@ -1430,7 +1482,7 @@
             Entenda o plano
           </summary>
           <div class="sd-body">
-            Uma mentoria individual pelo <strong>WhatsApp ou chat</strong>, no seu ritmo. Você manda o projeto, suas dúvidas e o contexto — a gente analisa tudo, aponta o que tá funcionando e o que precisa mudar, e devolve um direcionamento claro com resumo escrito. Ótimo pra quem quer um diagnóstico rápido sem compromisso mensal.
+            Uma mentoria individual pelo <strong>WhatsApp ou chat</strong>, no seu ritmo. Você manda o projeto, suas ideias e o contexto — a gente analisa tudo, incluindo uma <strong>análise detalhada do seu logo</strong> (o que está funcionando e o que pode melhorar), e devolve um direcionamento claro com resumo escrito. Ótimo pra quem quer um diagnóstico rápido sem compromisso mensal. <br><br>💜 Quem fecha o <strong>Plano Create.</strong> após a sessão do Ref. ganha <strong>15% de desconto</strong>.
           </div>
         </details>
         <a href="https://www.instagram.com/refcotech/" target="_blank" class="plano-cta outline">Quero começar</a>
@@ -1441,7 +1493,7 @@
         <div class="plano-nome">Create.</div>
         <div class="plano-desc">Para quem quer construir um projeto do zero com suporte real.</div>
         <div class="plano-preco" data-base="197" data-sufixo="/mês">R$&nbsp;197 <span>/mês</span></div>
-        <div class="plano-periodo">4 sessões mensais · revisões inclusas</div>
+        <div class="plano-periodo">4 sessões mensais · revisões inclusas · atendimento 8h–20h</div>
         <hr class="plano-divider">
         <ul class="plano-features">
           <li>4 sessões de mentoria por mês</li>
@@ -1457,7 +1509,7 @@
             Entenda o plano
           </summary>
           <div class="sd-body">
-            O plano pra quem quer <strong>construir algo de verdade</strong> com acompanhamento constante. São 4 sessões por mês — uma por semana — onde a gente avança no projeto junto, revisa código ou layout, e você ainda tem acesso a feedback via chat entre as sessões. Ideal pra portfólios, projetos pessoais ou transição de carreira.
+            O plano pra quem quer <strong>construir algo de verdade</strong> com acompanhamento constante. São 4 sessões por mês — uma por semana — onde a gente avança no projeto junto, revisa código ou layout, e você ainda tem acesso a feedback via chat entre as sessões. Ideal pra portfólios, projetos pessoais ou transição de carreira.<br><br>📲 Atendemos das <strong>8h às 20h</strong>. Fora desse horário, você recebe uma mensagem automática e respondemos no próximo período disponível.
           </div>
         </details>
         <a href="https://www.instagram.com/refcotech/" target="_blank" class="plano-cta filled">Quero começar</a>
@@ -1468,7 +1520,7 @@
         <div class="plano-nome">Go.</div>
         <div class="plano-desc">Para quem precisa publicar rápido com qualidade e identidade própria.</div>
         <div class="plano-preco" data-base="397" data-sufixo="/projeto">R$&nbsp;397 <span>/projeto</span></div>
-        <div class="plano-periodo">Entrega em até 3 semanas</div>
+        <div class="plano-periodo">Entrega em até 2 semanas</div>
         <hr class="plano-divider">
         <ul class="plano-features">
           <li>Projeto completo do zero ao deploy</li>
@@ -1488,6 +1540,33 @@
           </div>
         </details>
         <a href="https://www.instagram.com/refcotech/" target="_blank" class="plano-cta outline">Quero começar</a>
+      </div>
+
+      <div class="plano-card mensal reveal">
+        <span class="plano-badge mensal-badge">Recorrência</span>
+        <div class="plano-nome">Mensal.</div>
+        <div class="plano-desc">Para quem tem vários projetos ao longo do ano e quer acompanhamento contínuo com vantagens exclusivas.</div>
+        <div class="plano-preco" data-base="167" data-sufixo="/mês">R$&nbsp;167 <span>/mês</span></div>
+        <div class="plano-periodo">Assinatura mensal · cancele quando quiser</div>
+        <hr class="plano-divider">
+        <ul class="plano-features">
+          <li>Tudo do plano Create.</li>
+          <li>Projetos ilimitados no período</li>
+          <li>Brindes exclusivos para assinantes</li>
+          <li>Prioridade no atendimento</li>
+          <li>Materiais novos todo mês</li>
+          <li>Desconto em sessões avulsas</li>
+        </ul>
+        <details class="plano-detalhe">
+          <summary>
+            <svg class="sd-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Entenda o plano
+          </summary>
+          <div class="sd-body">
+            Ideal pra quem não tem um projeto único, mas <strong>vários ao longo do ano</strong> — e quer ter uma mentora de confiança sempre disponível. A assinatura dá acesso a tudo do Create. com vantagens extras: atendimento prioritário, brindes exclusivos liberados mensalmente e desconto em sessões avulsas. Sem contrato, sem fidelidade — você cancela quando quiser.
+          </div>
+        </details>
+        <a href="https://www.instagram.com/refcotech/" target="_blank" class="plano-cta outline">Quero assinar</a>
       </div>
 
     </div>
@@ -1709,7 +1788,27 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </summary>
         <div class="faq-body">
-          Depende do seu momento: se você quer <strong>explorar antes de qualquer compromisso</strong>, começa pelo plano gratuito. Se tem um projeto mas precisa de direção, o <strong>Ref.</strong> é ideal. Se quer construir algo do zero com acompanhamento semanal, o <strong>Create.</strong> é o mais completo. Se tem prazo e quer tudo resolvido de uma vez, o <strong>Go.</strong> é pra você. Dúvida? Manda mensagem — a gente ajuda a escolher.
+          Depende do seu momento: se você quer <strong>explorar antes de qualquer compromisso</strong>, começa pelo plano gratuito. Se tem um projeto mas precisa de direção, o <strong>Ref.</strong> é ideal. Se quer construir algo do zero com acompanhamento semanal, o <strong>Create.</strong> é o mais completo. Se tem prazo e quer tudo resolvido de uma vez, o <strong>Go.</strong> é pra você. Se tem vários projetos ao longo do ano, o <strong>Mensal.</strong> é a melhor relação custo-benefício. Dúvida? Manda mensagem — a gente ajuda a escolher.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>
+          Qual o horário de atendimento?
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-body">
+          Atendemos das <strong>8h às 20h</strong>, todos os dias. Fora desse horário você pode mandar mensagem normalmente — assim que entrarmos no período de atendimento, respondemos. Não deixamos ninguém sem retorno.
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>
+          Tem desconto para quem fez o Plano Ref. e quer continuar?
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-body">
+          Sim! Quem faz uma sessão pelo <strong>Plano Ref.</strong> e decide fechar o <strong>Plano Create.</strong> na sequência recebe <strong>15% de desconto</strong> na primeira mensalidade. É nossa forma de reconhecer quem confiou na gente desde o início.
         </div>
       </details>
 
@@ -1801,6 +1900,16 @@
             </div>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left:auto;color:var(--text-soft)"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+          <a href="https://wa.me/5511999999999" target="_blank" class="canal-card">
+            <div class="canal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="canal-label">WhatsApp</div>
+              <div class="canal-desc">Atendimento das 8h às 20h</div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left:auto;color:var(--text-soft)"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
           <div class="canal-card disabled">
             <div class="canal-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1887,6 +1996,10 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             <span><strong>Checklist do Portfólio Perfeito</strong> — estrutura, conteúdo e SEO básico</span>
           </div>
+          <div class="modal-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+            <span><strong>Guia de Estilos SOC</strong> — layout, paleta e tipografia em 3 estilos prontos</span>
+          </div>
         </div>
 
         <!-- ⚠️  Substitua ACTION pelo seu endpoint do Formspree: https://formspree.io/f/SEU-ID -->
@@ -1930,6 +2043,16 @@
             <div class="modal-dl-info">
               <strong>Checklist do Portfólio Perfeito</strong>
               <span>32 itens: estrutura, conteúdo, design, SEO e publicação · PDF</span>
+            </div>
+            <svg class="modal-dl-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+          <a href="guia-estilos-soc-refco.pdf" download class="modal-dl-btn">
+            <div class="modal-dl-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+            </div>
+            <div class="modal-dl-info">
+              <strong>Guia de Estilos SOC</strong>
+              <span>Layout, paleta e tipografia nos estilos moderno, minimalista e personalizado · PDF</span>
             </div>
             <svg class="modal-dl-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           </a>
